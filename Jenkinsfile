@@ -9,15 +9,15 @@ pipeline {
         }
 
         stage('Serve index.html') {
-            steps {
-                echo 'Starting simple HTTP server to serve index.html'
-                sh '''
-                    python3 -m http.server 8000 &
-                    sleep 5
-                '''
-                echo 'Visit: http://localhost:8000/index.html'
-            }
-        }
+    steps {
+        echo 'Starting simple HTTP server to serve index.html'
+        sh '''
+            nohup python3 -m http.server 8000 > /dev/null 2>&1 &
+        '''
+        echo 'Visit: http://localhost:8000/index.html'
+    }
+}
+
     }
 
     post {
