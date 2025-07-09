@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the project...'
+                echo 'Building the project......'
                 sh 'echo Simulating build process...'
                 // For real projects: sh 'npm install' or 'mvn clean install' etc.
             }
